@@ -211,6 +211,15 @@ body.lock {
 }
 
 .header__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 auto;
   flex: 0 0 auto;
@@ -262,15 +271,18 @@ body.lock {
 }
 
 .btn-header {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
   min-height: 40px;
   padding: 5px 30px;
   text-align: center;
@@ -284,6 +296,47 @@ body.lock {
 .btn-header:focus {
   color: #20364b;
   background: #ffffff;
+}
+
+.cart-btn {
+  position: relative;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 48px;
+  flex: 0 0 48px;
+}
+
+.cart-btn img {
+  width: 100%;
+  height: 100%;
+  -webkit-transition: 0.1s linear;
+  -o-transition: 0.1s linear;
+  transition: 0.1s linear;
+}
+
+.cart-btn__counter {
+  position: absolute;
+  bottom: 60%;
+  left: 50%;
+  z-index: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 1;
+  color: #20364b;
+  background: #fdc11f;
+  border-radius: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 [class*=-ibg] {
@@ -652,6 +705,44 @@ body.lock {
   font-size: 40px;
 }
 
+.popup-create {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 15;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.popup-create.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+}
+
+.popup-create__content {
+  margin: auto;
+  padding: 30px;
+  font-size: 20px;
+  text-align: center;
+  background: #20364b;
+  border-radius: 20px;
+  -webkit-box-shadow: 0 0 15px #ffffff;
+  box-shadow: 0 0 15px #ffffff;
+}
+
 .books__container {
   display: grid;
   grid-template-rows: auto;
@@ -747,9 +838,9 @@ body.lock {
 
   .banner__image-ibg {
     -webkit-box-flex: 0;
-    -ms-flex: 0 0 49.1803278689%;
-    flex: 0 0 49.1803278689%;
-    padding-bottom: 45.0819672131%;
+    -ms-flex: 0 0 36.8852459016%;
+    flex: 0 0 36.8852459016%;
+    padding-bottom: 32.7868852459%;
     -ms-flex-item-align: start;
     align-self: flex-start;
   }
@@ -985,7 +1076,7 @@ body.lock {
     top: 50%;
     right: 0;
     width: 100%;
-    padding-bottom: 91.6666666667%;
+    padding-bottom: 88.9322916667%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -1006,17 +1097,40 @@ body.lock {
   }
 }
 
+@media (max-width: 400px) {
+  .nav-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    row-gap: 50px;
+  }
+
+  .nav-header__list {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+  }
+
+  .btn-header:focus {
+    background: #fdc11f;
+  }
+}
+
+@media (any-hover: hover) and (max-width: 400px) {
+  .btn-header:hover {
+    background: #fdc11f;
+  }
+}
+
 @media (max-width: 320px) {
   .header__container {
     -webkit-column-gap: 15px;
     -moz-column-gap: 15px;
     column-gap: 15px;
-  }
-
-  .btn-header {
-    min-height: 30px;
-    padding: 5px 20px;
-    font-size: 14px;
   }
 }
 
