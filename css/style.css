@@ -406,6 +406,7 @@ body.lock {
   font-weight: 700;
 }
 
+.form-admin__textarea,
 .form-admin__input,
 .form-create__input,
 .form-sign-in__input,
@@ -413,61 +414,105 @@ body.lock {
   margin-bottom: 30px;
 }
 
+.form-admin__textarea > input,
 .form-admin__input > input,
 .form-create__input > input,
 .form-sign-in__input > input,
-.form-user__input > input {
+.form-user__input > input,
+.form-admin__textarea > textarea,
+.form-admin__input > textarea,
+.form-create__input > textarea,
+.form-sign-in__input > textarea,
+.form-user__input > textarea {
   width: 100%;
   min-height: 40px;
   padding: 0 15px;
   font-size: 16px;
   color: #20364b;
   border-radius: 20px;
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
-  transition: 0.3s;
+  -webkit-transition: -webkit-box-shadow 0.3s;
+  transition: -webkit-box-shadow 0.3s;
+  -o-transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s;
+  transition: box-shadow 0.3s, -webkit-box-shadow 0.3s;
 }
 
+.form-admin__textarea > input:focus,
 .form-admin__input > input:focus,
 .form-create__input > input:focus,
 .form-sign-in__input > input:focus,
-.form-user__input > input:focus {
+.form-user__input > input:focus,
+.form-admin__textarea > textarea:focus,
+.form-admin__input > textarea:focus,
+.form-create__input > textarea:focus,
+.form-sign-in__input > textarea:focus,
+.form-user__input > textarea:focus {
   -webkit-box-shadow: 0 0 10px #fdc11f;
   box-shadow: 0 0 10px #fdc11f;
 }
 
+.form-admin__textarea > input:focus::-webkit-input-placeholder,
 .form-admin__input > input:focus::-webkit-input-placeholder,
 .form-create__input > input:focus::-webkit-input-placeholder,
 .form-sign-in__input > input:focus::-webkit-input-placeholder,
-.form-user__input > input:focus::-webkit-input-placeholder {
+.form-user__input > input:focus::-webkit-input-placeholder,
+.form-admin__textarea > textarea:focus::-webkit-input-placeholder,
+.form-admin__input > textarea:focus::-webkit-input-placeholder,
+.form-create__input > textarea:focus::-webkit-input-placeholder,
+.form-sign-in__input > textarea:focus::-webkit-input-placeholder,
+.form-user__input > textarea:focus::-webkit-input-placeholder {
   font-size: 0;
 }
 
+.form-admin__textarea > input:focus::-moz-placeholder,
 .form-admin__input > input:focus::-moz-placeholder,
 .form-create__input > input:focus::-moz-placeholder,
 .form-sign-in__input > input:focus::-moz-placeholder,
-.form-user__input > input:focus::-moz-placeholder {
+.form-user__input > input:focus::-moz-placeholder,
+.form-admin__textarea > textarea:focus::-moz-placeholder,
+.form-admin__input > textarea:focus::-moz-placeholder,
+.form-create__input > textarea:focus::-moz-placeholder,
+.form-sign-in__input > textarea:focus::-moz-placeholder,
+.form-user__input > textarea:focus::-moz-placeholder {
   font-size: 0;
 }
 
+.form-admin__textarea > input:focus:-ms-input-placeholder,
 .form-admin__input > input:focus:-ms-input-placeholder,
 .form-create__input > input:focus:-ms-input-placeholder,
 .form-sign-in__input > input:focus:-ms-input-placeholder,
-.form-user__input > input:focus:-ms-input-placeholder {
+.form-user__input > input:focus:-ms-input-placeholder,
+.form-admin__textarea > textarea:focus:-ms-input-placeholder,
+.form-admin__input > textarea:focus:-ms-input-placeholder,
+.form-create__input > textarea:focus:-ms-input-placeholder,
+.form-sign-in__input > textarea:focus:-ms-input-placeholder,
+.form-user__input > textarea:focus:-ms-input-placeholder {
   font-size: 0;
 }
 
+.form-admin__textarea > input:focus::-ms-input-placeholder,
 .form-admin__input > input:focus::-ms-input-placeholder,
 .form-create__input > input:focus::-ms-input-placeholder,
 .form-sign-in__input > input:focus::-ms-input-placeholder,
-.form-user__input > input:focus::-ms-input-placeholder {
+.form-user__input > input:focus::-ms-input-placeholder,
+.form-admin__textarea > textarea:focus::-ms-input-placeholder,
+.form-admin__input > textarea:focus::-ms-input-placeholder,
+.form-create__input > textarea:focus::-ms-input-placeholder,
+.form-sign-in__input > textarea:focus::-ms-input-placeholder,
+.form-user__input > textarea:focus::-ms-input-placeholder {
   font-size: 0;
 }
 
+.form-admin__textarea > input:focus::placeholder,
 .form-admin__input > input:focus::placeholder,
 .form-create__input > input:focus::placeholder,
 .form-sign-in__input > input:focus::placeholder,
-.form-user__input > input:focus::placeholder {
+.form-user__input > input:focus::placeholder,
+.form-admin__textarea > textarea:focus::placeholder,
+.form-admin__input > textarea:focus::placeholder,
+.form-create__input > textarea:focus::placeholder,
+.form-sign-in__input > textarea:focus::placeholder,
+.form-user__input > textarea:focus::placeholder {
   font-size: 0;
 }
 
@@ -635,6 +680,18 @@ body.lock {
   100% {
     right: -45px;
   }
+}
+
+.about__title {
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  color: #fdc11f;
+  font-size: 60px;
+}
+
+.about__text {
+  max-width: max(50vw, 400px);
+  font-size: 25px;
 }
 
 .form-user__title {
@@ -821,6 +878,12 @@ body.lock {
   grid-template-columns: repeat(4, auto);
 }
 
+.form-admin__textarea > textarea {
+  min-height: 200px;
+  padding: 15px;
+  resize: vertical;
+}
+
 @media (min-width: 769px) {
   .burger {
     display: none;
@@ -976,6 +1039,14 @@ body.lock {
 
   .banner__text {
     font-size: calc(16px + 4 * ((100vw - 375px) / 875));
+  }
+
+  .about__title {
+    font-size: calc(25px + 35 * ((100vw - 375px) / 875));
+  }
+
+  .about__text {
+    font-size: calc(16px + 9 * ((100vw - 375px) / 875));
   }
 
   .form-user__title {
